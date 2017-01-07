@@ -1,4 +1,13 @@
 /*global $, alert, jQuery, console, split*/
+/*
+    *********************************************************************
+    * Plugin Name: Password Generatro                                   *
+    * Version: 0.1                                                      *
+    * Plugin Url: https://github.com/2bokamal/PasswordGeneratorjQuery   *
+    * Author Name: Mohmmed Kamal Farajalla                              *
+    * Author Url: akwade.com                                            *
+    *********************************************************************
+ */
 (function ($) {
     'use strict';
     
