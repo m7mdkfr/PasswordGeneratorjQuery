@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>  </title>
+        
+        <!--File Normalize ==> Nice Reset -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        
+        <!--Flie My Style -->
+        <link rel="stylesheet" href="css/main.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Cairo:400,700" rel="stylesheet">
+      
+     </head>
+    <body>
+        
+
+
+    <!-- Start Container -->
+    <div class="container">
+        <h1>القيام بعمل كلمة مرور عشوائية</h1>
+        <div class="test">
+            <input type="text" class="input-g">
+            <button>Change</button>
+        </div>
+        <div class="featuares text-center">
+            <h2> المزايا</h2>
+            <div class="col-md-3">
+                <p class='note'>
+                   <i class="fa fa-bolt"></i>
+                   <br>
+                    إخراج كلمة مرور قوية
+                </p>
+            </div>
+
+            <div class="col-md-3">
+                <p class='note' >
+                   <i class="fa fa-refresh"></i>
+                   <br>
+                    تغير كلمة المرور عند الضغط علي الزر
+                </p>
+            </div>
+
+            <div class="col-md-3">
+                <p class='note'>
+                   <i class="fa fa-thumbs-o-up"></i>
+                   <br>
+                    سهولة الاستخدام
+                </p>
+            </div>
+
+            <div class="col-md-3">
+                <p class='note'>
+                   <i class="fa fa-cut"></i>
+                   <br>
+                    تحديد كلمة المرور في حال الضغط علي حقل النص ليسهل نسخ الكلمة
+                </p>
+            </div>
+      </div>
+
+
+
+        <div class="box-pass">
+            <div class="col-md-4">
+                <h4>كيفية الاستخدام</h4>
+                <p>
+                        <code class="removem">أولا</code> تأكد أنك قمت بتضمين مكتبه الجيكويري لأن هذا  الـ Plugin يعتمد عليها.
+                                     ثم قم بتضمين هذا الـ Plugin في مشروعك
+<pre class="dir-ltr"> 
+&lt;scrtip src="../jquery.js">&lt;/script>
+&lt;scrtip src="../generate-password.js">&lt;/script>
+</pre>
+
+                </p>
+
+                <p>
+                <code class="removem">ثانياَ</code> 
+                قم بوضع حقل النص الذي سوف يكون فيه كلمة المرور وايضا الزر الذي يقوم بتغير كلمة المرور في حال الضغط عليها في div ليكون هو الـ Parent لهما واعطه اى اسم بواسطة خاصية الـ Class أو id
+
+                </p>
+
+                <p>
+                <code class="removem">ثالثا</code> قم باستدعاء الدالة المسئولة عن تشغيل الـ Plugin باستخدام الخاصية التي قمت باعطائها للـ Div الأب
+
+<pre class='dir-ltr'>
+$('div.parent').generatePassword();
+</pre>
+                </p>
+
+                <p>
+                <code class="removem">رابعا</code>
+                يوجد بعض الـ Option لها <br>
+                مثلا لتحديد طول كلمة المرور أو لتحديد الاحرف والعلامات والارقام التي تريد ان تكون في كلمة المرور
+                </p>
+                <hr>
+                <p>
+                    <code>passCharachterSet</code> <br>
+                    وتستخدم هذه الخاصة لتحديد نوع الحروف الخاصة , 
+                    مثلا , هل هي عبارة عن حروف , 
+                    أو عبارة عن ارقام , 
+                    فهذه الخاصية تقبل  الحروف من 0 - 9
+                    وتقبل ايضا a-z , A-Z
+                    بالاضافة إلي الحروف الخاصة, <br>
+                    
+                </p>
+
+                <p>
+                                    <code>passSize</code> <br>
+                                    وهى عبارة عن الخاصية التي تستخدم في تحديد طول كلمة المرور 
+
+
+                </p>
+                <p>
+                <code>passSeparate</code> <br>
+                                    في حال قمت باستخدام اكثر من نوع للحروف مثلا لو قمنا باختيار a-z ونريد ايضا اضافة A-Z
+                 هذا الخيار يساعدك علي اختيار العلامة المناسبة لوضعها بين a-z Separate A-Z
+<pre class='dir-ltr'>
+passSeparate: '_',
+passCharachterSet:'a-z_A-z'
+</pre>
+                </p>
+                <p>
+<pre class='dir-ltr'>
+$('div.parent').generatePassword({
+    passSeparate: ' '
+    passCharachterSet: 'a-z #', // يمكن ان يكون A-Z أو  #
+    passSize: 18
+});
+</pre>
+                </p>
+
+            </div>
+            <div class="col-md-8">
+                <h4>أمثلة</h4>
+                <div class="form-control">
+                    <label>إستخدام كل الحروف بالاضافة إلي الأرقام</label>
+                    <div class="input input-ex-1">
+                        <input type="text" class="input-generator-pass">
+                        <button>تغيير</button>
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label>إستخدام الحروف فقط من a-z, A-Z</label>
+                    <div class="input input-ex-2">
+                        <input type="text" class="input-generator-pass">
+                        <button>تغيير</button>
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label>إستخدام فقط الحروف الكبيرة  A-Z</label>
+                    <div class="input input-ex-3">
+                        <input type="text" class="input-generator-pass">
+                        <button>تغيير</button>
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label>إستخدام فقط الحروف الصغيرة a-z</label>
+                     <div class="input input-ex-4">
+                        <input type="text" class="input-generator-pass">
+                        <button>تغيير</button>
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label>إستخدام الحروف الخاصة مثل # $ % @ بإضافة # فقط في الخاصية data-character-set </label>
+                    <div class="input input-ex-5">
+                        <input type="text" class="input-generator-pass">
+                        <button>تغيير</button>
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label>إستخدام الأرقام فقط  0-9</label>
+                    <div class="input input-ex-6">
+                        <input type="text" class="input-generator-pass">
+                        <button>تغيير</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+    <!-- End Contianer -->
+
+
+
+    
+         
+        <script src="../dist/jquery-1.11.2.min.js"></script>
+        <script src="../dist/generate-password.js"></script>
+        <script>
+			
+		  $('.test').generatePassword();
+		
+		  $('.input-ex-1').generatePassword({
+			  passCharachterSet: 'a-z A-Z 0-9 #',
+			  passSize: "25",
+              passSeparate: " "
+			  
+		  });
+            
+		  $('.input-ex-2').generatePassword({
+			  passCharachterSet: 'a-z,A-Z'
+		  });
+
+		  $('.input-ex-3').generatePassword({
+			  passCharachterSet: 'A-Z'
+		  });
+            
+		  $('.input-ex-4').generatePassword({
+			  passCharachterSet: 'a-z'
+		  });
+            
+		  $('.input-ex-5').generatePassword({
+			  passCharachterSet: '#'
+		  });
+            
+		  $('.input-ex-6').generatePassword({
+			  passCharachterSet: '0-9'
+		  });
+		</script>
+    </body>
+</html>
