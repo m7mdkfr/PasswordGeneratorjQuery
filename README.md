@@ -4,7 +4,7 @@ jQuery use To Create a Password Powerful and Easy Passage in Use
  
 <hr>
 
-<a href='http://akwade.com/generatePassword/' target='_blank' >Demo &amp; Examples </a>
+<a href='https://akwade.com/generatePassword/demo/' target='_blank' >Demo &amp; Examples </a>
 
 <h3> How It Works </h2>
 
